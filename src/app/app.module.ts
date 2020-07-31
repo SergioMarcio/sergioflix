@@ -3,26 +3,32 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-import { FullBannerComponent } from './shared/full-banner/full-banner.component';
-import { ListTitlesComponent } from './shared/list-titles/list-titles.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { TitleComponent } from './shared/title/title.component';
+import { FilmesService } from '../app/services/filmes.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './main/home/home.module';
+import { PesquisaModule } from './main/pesquisa/pesquisa.module';
+
 
 @NgModule({
+
   declarations: [
     AppComponent,
-    NavBarComponent,
-    FullBannerComponent,
-    ListTitlesComponent,
-    FooterComponent,
-    TitleComponent,
   ],
+
   imports: [
+    HomeModule,
+    PesquisaModule,
+
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
   ],
-  providers: [],
+
+  providers: [
+    FilmesService
+  ],
+
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -1,0 +1,19 @@
+<app-nav-bar [opened]="menuOpened" [abaSelecionada]="0" (menuToggle)="setMenuState($event)"></app-nav-bar>
+
+<div class="content-fluid">
+   
+   <div class="p-3 list-titles">
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+  
+          <div class="div-capa" *ngFor="let capa of capasFilmes">
+              <img [src]="capa">
+          </div>
+  
+      </div>
+  
+  </div>
+
+</div>
+
+<div class="backdrop" (click)="closeMenu()" *ngIf="menuOpened"></div>

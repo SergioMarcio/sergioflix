@@ -1,0 +1,5 @@
+<app-nav-bar [opened]="menuOpened" [abaSelecionada]="1" (menuToggle)="setMenuState($event)"></app-nav-bar>
+
+<p>pesquisa works!</p>
+
+<div class="backdrop" (click)="closeMenu()" *ngIf="menuOpened"></div>
