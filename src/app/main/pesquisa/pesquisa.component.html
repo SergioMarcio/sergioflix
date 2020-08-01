@@ -1,5 +1,53 @@
-<app-nav-bar [opened]="menuOpened" [abaSelecionada]="1" (menuToggle)="setMenuState($event)"></app-nav-bar>
+<div style="width: 100%;">
 
-<p>pesquisa works!</p>
+    <div class="searchbar">
 
-<div class="backdrop" (click)="closeMenu()" *ngIf="menuOpened"></div>
+        <div style="width: 50%; display: flex; align-items: center;">
+
+            <div class="search" fxFlex fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon style="margin-top: 3px;" class="s-16 secondary-text">search</mat-icon>
+                <input style="width: 100%; font-family: 'PT Sans', sans-serif; font-size: 15px;"
+                    [(ngModel)]="textoPesquisa" type="text" placeholder="Ex. poderoso chefão" fxFlex>
+            </div>
+
+        </div>
+
+        <div style="width: 50%; display: flex; align-items: center; margin-left: 30px;">
+            <button mat-raised-button color="warn" style="outline: none;" (click)="pesquisaFilmes()">
+                <span class="material-icons" style="padding-right: 10px;">search</span>
+                Pesquisar
+            </button>
+        </div>
+
+    </div>
+
+    <div style="width: 100%; padding-bottom: 100px; height: calc(100vh - 120px); overflow: auto;">
+
+        <div class="div-capa" *ngFor="let capa of capasFilmes">
+            <img [src]="capa">
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <div class="quantidade-filmes">
+        <Label *ngIf="filmesEncontrados.total_results > 0">
+            Quantidade de Filmes Encontrados: {{ filmesEncontrados?.total_results }}
+        </Label>
+    </div>
+
+    <div *ngIf="botoesNavegacaoVisiveis" class="div-botoes">
+        <button mat-mini-fab color="warn" [disabled]="paginaAtual===1" aria-label="display"
+            matTooltip="Avançar para próxima página" (click)="paginaAnterior()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <button mat-mini-fab color="warn" [disabled]="paginaAtual===filmesEncontrados.total_pages" aria-label="display"
+            matTooltip="Voltar para página anterior" (click)="paginaSeguinte()">
+            <mat-icon>arrow_forward</mat-icon>
+        </button>
+    </div>
+
+</div>

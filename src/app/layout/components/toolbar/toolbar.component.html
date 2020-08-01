@@ -1,0 +1,55 @@
+<mat-toolbar class="p-0 mat-elevation-z1">
+
+    <div style="background-color: #353a48;" fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+
+        <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+
+            <div style="margin-top: 5px;">
+                <img src="https://fontmeme.com/permalink/200731/1fc865c35b269ecd10fd5863de6468cc.png"
+                    style="padding-left: 15px; height: 45px" alt="SergexFlix">
+            </div>
+
+            <div style="width: 100px; color: white; margin-left: 60px; font-family: 'PT Sans', sans-serif;">
+                <label style="cursor: pointer;" (click)="gotoHome()">Início</label>
+            </div>
+
+            <div style="width: 100px; color: white; margin-left: 60px; font-family: 'PT Sans', sans-serif;">
+                <label style="cursor: pointer;" (click)="gotoPesquisa()"for="">Pesquisar</label>
+            </div>
+
+        </div>
+
+        <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center" style="color: white;">
+
+            <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <img class="avatar mr-0 mr-sm-16" src="../../../../assets/images/sergex.png">
+                    <span class="username mr-12" fxHide fxShow.gt-sm>Sérgio Márcio</span>
+                    <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                </div>
+            </button>
+
+            <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+
+                <button mat-menu-item>
+                    <mat-icon>account_circle</mat-icon>
+                    <span>My Profile</span>
+                </button>
+
+                <button mat-menu-item class="">
+                    <mat-icon>mail</mat-icon>
+                    <span>Inbox</span>
+                </button>
+
+                <button mat-menu-item class="">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </button>
+
+            </mat-menu>
+
+        </div>
+
+    </div>
+
+</mat-toolbar>

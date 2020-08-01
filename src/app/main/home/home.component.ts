@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmesService } from 'src/app/services/filmes.service';
-import { environment } from 'src/environments/environment';
+import { environment } from 'environments/environment';
+import { FilmesService } from 'app/services/filmes.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
 
   urlBaseImagemCapaFilmeTMDB = environment.urlBaseImagemCapaFilmeTMDB;
   capasFilmes: any[] = [];
-  menuOpened = false;
 
   constructor(
     private _filmesService: FilmesService,
@@ -31,14 +30,6 @@ export class HomeComponent implements OnInit {
         }
       }
     )
-  }
-  
-  setMenuState(state: boolean) {
-    this.menuOpened = state;
-  }
-
-  closeMenu() {
-    this.menuOpened = false;
   }
 
 }

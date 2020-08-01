@@ -43,8 +43,8 @@ export const AppUrls = {
             return 'https://image.tmdb.org/t/p/w500' + capafilme;
         },
 
-        consultarListaFilmes(pesquisa: string): string {
-            return 'https://api.themoviedb.org/3/search/movie?api_key=' + keyTMDB + '"&language=pt-BR&page=1&include_adult=false&query=' + pesquisa;
+        consultarListaFilmes(pesquisa: string, pagina: number): string {
+            return 'https://api.themoviedb.org/3/search/movie?api_key=' + keyTMDB + '&language=pt-BR&include_adult=false&query=' + pesquisa + '&page=' + pagina;
         },
 
         consultarFilme(idfilme: number): string {

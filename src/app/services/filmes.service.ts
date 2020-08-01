@@ -69,9 +69,9 @@ export class FilmesService {
         return AppUrls.filmes.consultarCapaFilme(capafilme);
     }
 
-    consultarListaFilmes(pesquisa: string): Observable<FilmeResultadoPesquisaModel[]> {
-        const url = AppUrls.filmes.consultarListaFilmes(pesquisa);
-        return this.http.get<FilmeResultadoPesquisaModel[]>(url);
+    consultarListaFilmes(pesquisa: string, pagina: number): Observable<FilmeResultadoPesquisaModel> {
+        const url = AppUrls.filmes.consultarListaFilmes(pesquisa, pagina);
+        return this.http.get<FilmeResultadoPesquisaModel>(url);
     }
 
     consultarFilme(idfilme: number): Observable<FilmeDetalhesModel> {
