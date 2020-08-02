@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MosaicoFilmesModule } from '../mosaico-filmes/mosaico-filmes.module';
 
 @NgModule({
     
@@ -17,6 +18,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   ],
 
   imports: [
+    MosaicoFilmesModule,
     CommonModule,
     BrowserModule,
     HttpClientModule,

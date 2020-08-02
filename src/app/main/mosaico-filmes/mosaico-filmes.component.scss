@@ -1,0 +1,49 @@
+.div-capa {
+    display: flow-root;
+}
+
+.body {
+    width: 100%;
+    height: calc(100vh - 180px);
+    overflow: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.box {
+    flex: 1 1 150px; /*  Stretching: */
+    flex: 0 1 150px; /*  No stretching: */
+    margin: 5px;
+}
+
+a, #botoes {
+    padding: 5px;
+    max-width: 240px;
+    min-width: 240px;
+}
+
+@media screen and (max-width: 1800px) {
+    a, #botoes {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    a, #botoes {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    a, #botoes {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    a, #botoes {
+        width: 30%;
+    }
+}

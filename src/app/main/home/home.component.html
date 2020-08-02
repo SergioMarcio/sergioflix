@@ -1,15 +1,13 @@
-<div class="content-fluid">
+<div style="width: 100%;">
 
-    <div class="p-3 list-titles">
+    <div class="searchbar">
 
-        <div fxLayout="row" fxLayoutAlign="start center">
-
-            <div class="div-capa" *ngFor="let capa of capasFilmes">
-                <img [src]="capa">
-            </div>
-
+        <div class="unselectable barra">
+            <label for="">Filme Assistidos</label>
         </div>
 
     </div>
+
+    <app-mosaico-filmes [listaFilmes]="infoFilmes"></app-mosaico-filmes>
 
 </div>

@@ -21,33 +21,37 @@
 
     </div>
 
-    <div style="width: 100%; padding-bottom: 100px; height: calc(100vh - 120px); overflow: auto;">
+    <app-mosaico-filmes [listaFilmes]="infoFilmes"></app-mosaico-filmes>
+    
+    <!-- <div class="body">
 
-        <div class="div-capa" *ngFor="let capa of capasFilmes">
-            <img [src]="capa">
+        <div class="box div-capa" *ngFor="let filme of infoFilme">
+            <a target="_blank" href={{filme.linkfilme}}>
+                <img [src]="filme.capafilme">
+            </a>
         </div>
 
-    </div>
+    </div> -->
 
-</div>
+    <div class="footer">
+        <div class="quantidade-filmes">
+            <Label *ngIf="filmesEncontrados.total_results > 0">
+                Filmes Encontrados: {{ filmesEncontrados?.total_results }}
+            </Label>
+        </div>
 
-<div class="footer">
-    <div class="quantidade-filmes">
-        <Label *ngIf="filmesEncontrados.total_results > 0">
-            Quantidade de Filmes Encontrados: {{ filmesEncontrados?.total_results }}
-        </Label>
-    </div>
+        <div *ngIf="botoesNavegacaoVisiveis" class="div-botoes">
+            <button mat-mini-fab color="warn" [disabled]="paginaAtual===1" aria-label="display"
+                matTooltip="Avançar para próxima página" (click)="paginaAnterior()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
 
-    <div *ngIf="botoesNavegacaoVisiveis" class="div-botoes">
-        <button mat-mini-fab color="warn" [disabled]="paginaAtual===1" aria-label="display"
-            matTooltip="Avançar para próxima página" (click)="paginaAnterior()">
-            <mat-icon>arrow_back</mat-icon>
-        </button>
+            <button mat-mini-fab color="warn" [disabled]="paginaAtual===filmesEncontrados.total_pages"
+                aria-label="display" matTooltip="Voltar para página anterior" (click)="paginaSeguinte()">
+                <mat-icon>arrow_forward</mat-icon>
+            </button>
+        </div>
 
-        <button mat-mini-fab color="warn" [disabled]="paginaAtual===filmesEncontrados.total_pages" aria-label="display"
-            matTooltip="Voltar para página anterior" (click)="paginaSeguinte()">
-            <mat-icon>arrow_forward</mat-icon>
-        </button>
     </div>
 
 </div>

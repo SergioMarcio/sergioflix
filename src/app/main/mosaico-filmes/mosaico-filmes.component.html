@@ -1,0 +1,27 @@
+<div class="body">
+
+    <div class="box div-capa" *ngFor="let filme of listaFilmes">
+
+        <a target="_blank" href={{filme.linkfilme}}>
+            <img [src]="filme.capafilme">
+        </a>
+
+        <a>
+
+            <div id="botoes" style="width: 100%; display: flex;">
+                <div style="width: 33%;">
+                    assisti
+                </div>
+                <div style="width: 34%;">
+                    quero ver
+                </div>
+                <div style="width: 33%;">
+                    detalhes
+                </div>
+            </div>
+
+        </a>
+
+    </div>
+
+</div>

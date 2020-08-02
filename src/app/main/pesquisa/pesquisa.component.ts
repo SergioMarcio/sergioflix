@@ -4,6 +4,11 @@ import { environment } from 'environments/environment';
 import { FilmeResultadoPesquisaModel } from 'app/models/filme-resultado-pesquisa.model';
 import { FilmesService } from 'app/services/filmes.service';
 
+export class InformacoesFilme {
+  capafilme: string;
+  linkfilme: string;
+}
+
 @Component({
   selector: 'app-pesquisa',
   templateUrl: './pesquisa.component.html',
@@ -14,7 +19,7 @@ export class PesquisaComponent implements OnInit {
   textoPesquisa = '';
   urlBaseImagemCapaFilmeTMDB = environment.urlBaseImagemCapaFilmeTMDB;
   filmesEncontrados: FilmeResultadoPesquisaModel = new FilmeResultadoPesquisaModel();
-  capasFilmes: any[] = [];
+  infoFilmes: InformacoesFilme[];
   totalPaginas: number;
   filmeSemCapa = './../../../assets/images/sem_capa.png'
   botoesNavegacaoVisiveis = false;
@@ -29,8 +34,22 @@ export class PesquisaComponent implements OnInit {
   }
 
   pesquisaFilmes(): void {
+    this.paginaAtual = 1;
+    this.pesquisaFilmesPorPagina()
+  }
+  
+  paginaAnterior(): void {
+    this.paginaAtual = this.paginaAtual - 1;
+    this.pesquisaFilmesPorPagina();
+  }
 
-    this.capasFilmes = [];
+  paginaSeguinte(): void {
+    this.paginaAtual = this.paginaAtual + 1;
+    this.pesquisaFilmesPorPagina();
+  }
+
+  pesquisaFilmesPorPagina() {
+    this.infoFilmes = [];
 
     this._filmesService.consultarListaFilmes(this.textoPesquisa, this.paginaAtual).subscribe(
       data => {
@@ -45,11 +64,18 @@ export class PesquisaComponent implements OnInit {
           }
 
           for (let i = 0; i < data.results.length; i++) {
+            let filme = new InformacoesFilme();
+
             if (this.filmesEncontrados.results[i].poster_path === null) {
-              this.capasFilmes[i] = this.filmeSemCapa;
+              filme.capafilme = this.filmeSemCapa;
+              filme.linkfilme = 'https://www.themoviedb.org/movie/' + this.filmesEncontrados.results[i].id;
+
             } else {
-              this.capasFilmes[i] = this.urlBaseImagemCapaFilmeTMDB + this.filmesEncontrados.results[i].poster_path;
+              filme.capafilme = this.urlBaseImagemCapaFilmeTMDB + this.filmesEncontrados.results[i].poster_path;
+              filme.linkfilme = 'https://www.themoviedb.org/movie/' + this.filmesEncontrados.results[i].id;
+
             }
+            this.infoFilmes.push(filme)
           }
         }
       },
@@ -57,16 +83,6 @@ export class PesquisaComponent implements OnInit {
         console.log(error)
       }
     )
-  }
-
-  paginaAnterior() {
-    this.paginaAtual = this.paginaAtual - 1;
-    this.pesquisaFilmes();
-  }
-
-  paginaSeguinte() {
-    this.paginaAtual = this.paginaAtual + 1;
-    this.pesquisaFilmes();
   }
 
 }

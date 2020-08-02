@@ -11,13 +11,7 @@ export const navigation: FuseNavigation[] = [
                 title: 'Início',
                 type: 'item',
                 icon: 'home',
-                url: '/',
-                // badge    : {
-                //     title    : '25',
-                //     translate: 'NAV.SAMPLE.BADGE',
-                //     bg       : '#F44336',
-                //     fg       : '#FFFFFF'
-                // }
+                url: '/home',
             },
             {
                 id: 'pesquisa',
@@ -25,7 +19,7 @@ export const navigation: FuseNavigation[] = [
                 type: 'item',
                 icon: 'search',
                 url: '/pesquisa',
-            }
+            },
         ]
     }
 ];

@@ -4,18 +4,23 @@
 
         <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
 
+            <button mat-icon-button class="navbar-toggle-button" *ngIf="!hiddenNavbar && !rightNavbar"
+                (click)="toggleSidebarOpen('navbar')" fxHide.gt-md>
+                <mat-icon class="secondary-text">menu</mat-icon>
+            </button>
+
             <div style="margin-top: 5px;">
                 <img src="https://fontmeme.com/permalink/200731/1fc865c35b269ecd10fd5863de6468cc.png"
                     style="padding-left: 15px; height: 45px" alt="SergexFlix">
             </div>
-
+<!-- 
             <div style="width: 100px; color: white; margin-left: 60px; font-family: 'PT Sans', sans-serif;">
                 <label style="cursor: pointer;" (click)="gotoHome()">Início</label>
             </div>
 
             <div style="width: 100px; color: white; margin-left: 60px; font-family: 'PT Sans', sans-serif;">
-                <label style="cursor: pointer;" (click)="gotoPesquisa()"for="">Pesquisar</label>
-            </div>
+                <label style="cursor: pointer;" (click)="gotoPesquisa()" for="">Pesquisar</label>
+            </div> -->
 
         </div>
 

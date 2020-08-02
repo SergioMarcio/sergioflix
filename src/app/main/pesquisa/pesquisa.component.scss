@@ -26,22 +26,13 @@
   width: 100%;
   display: flex;
   background-image: linear-gradient(to bottom right, #1871d1, #052a4b);
-  padding-left: 50px;
+  padding-left: 10px;
   height: 60px;
-}
-
-img {
-  width: 15%;
-  padding: 5px;
-}
-
-.div-capa {
-  display: contents;
 }
 
 .footer {
   width: 100%;
-  position: fixed;
+  position: absolute;
   background-color: #0d4985;
   height: 60px;
   bottom: 0;
@@ -52,7 +43,7 @@ img {
   width: 60%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   color: white;
   font-size: 18px;
   font-family: "PT Sans", sans-serif;

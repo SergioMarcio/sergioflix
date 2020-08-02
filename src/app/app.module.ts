@@ -26,6 +26,7 @@ import { PesquisaModule } from './main/pesquisa/pesquisa.module';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'pesquisa', component: PesquisaComponent}
 ];
 
