@@ -13,37 +13,158 @@
 }
 
 .box {
-    flex: 1 1 150px; /*  Stretching: */
-    flex: 0 1 150px; /*  No stretching: */
-    margin: 5px;
+    flex: 1 1 200px; /*  Stretching: */
+    flex: 0 1 200px; /*  No stretching: */
+    margin: 10px;
 }
 
-a, #botoes {
-    padding: 5px;
-    max-width: 240px;
-    min-width: 240px;
+a:hover {
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1800px) {
-    a, #botoes {
+    a,
+    #botoes {
         width: 15%;
     }
 }
 
 @media screen and (max-width: 1350px) {
-    a, #botoes {
+    a,
+    #botoes {
         width: 20%;
     }
 }
 
 @media screen and (max-width: 900px) {
-    a, #botoes {
+    a,
+    #botoes {
         width: 25%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    a, #botoes {
+    a,
+    #botoes {
         width: 30%;
     }
+}
+
+.botoes {
+    outline: none;
+    width: 100%;
+    color: white;
+    margin-top: 10px;
+}
+
+.botao-ja-vi {
+    background-color: #268126;
+}
+
+.botao-quero-ver {
+    background-color: #f44336;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ja-vi {
+    background-color: #1c7805;
+}
+
+.quero-ver {
+    background-color: #d18700;
+}
+
+img {
+    max-width: 100%;
+    height: 300px;
+    vertical-align: top;
+    border: none;
+}
+
+.div-botoes {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.cor-botao-icone-ja-vi {
+    background-color: #076c32;
+}
+
+.cor-botao-texto-ja-vi {
+    background-color: #008f3d;
+}
+
+.cor-botao-icone-quero-ver {
+    background-color: #af7100;
+}
+
+.cor-botao-texto-quero-ver {
+    background-color: #e49300;
+}
+
+.cor-botao-icone-nao-vi {
+    background-color: #cb0000;
+}
+
+.cor-botao-texto-nao-vi {
+    background-color: #ff3535;
+}
+
+.botao-icone {
+    width: 30%;
+    color: white;
+    height: 40px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.botao-texto {
+    width: 70%;
+    color: white;
+    height: 40px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.div-legenda {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+}
+
+.botao-texto-legenda {
+    width: 100%;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
 }

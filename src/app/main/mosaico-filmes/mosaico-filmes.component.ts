@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, ViewChild } from '@angular/core';
 
 export class InformacoesFilme {
     capafilme: string;
@@ -8,14 +8,16 @@ export class InformacoesFilme {
 @Component({
     selector: 'app-mosaico-filmes',
     templateUrl: './mosaico-filmes.component.html',
-    styleUrls: ['./mosaico-filmes.component.scss']
+    styleUrls: ['./mosaico-filmes.component.scss'],
 })
 export class MosaicoFilmesComponent implements OnInit {
 
     @Input() listaFilmes: InformacoesFilme[];
+    @Input() tipoListaFilmes: string;
 
     constructor() { }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+     }
 
 }

@@ -4,7 +4,6 @@
     "license": "https://themeforest.net/licenses/terms/regular",
     "scripts": {
         "server": "json-server --watch dados_iniciais.json",
-        "dev": "concurrently \"ng serve\" \"npm run server\"",
         "ng": "ng",
         "start": "ng serve --open",
         "start-hmr": "ng serve --configuration hmr --source-map=false --hmr-warning=false",
@@ -16,7 +15,8 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "bundle-report": "webpack-bundle-analyzer dist/stats.json"
+        "bundle-report": "webpack-bundle-analyzer dist/stats.json",
+        "dev": "concurrently \"ng serve\" \"npm run server\""
     },
     "private": true,
     "dependencies": {
@@ -60,6 +60,7 @@
         "perfect-scrollbar": "1.4.0",
         "prismjs": "1.19.0",
         "rxjs": "6.5.4",
+        "smart-webcomponents-angular": "7.7.1",
         "tslib": "1.10.0",
         "web-animations-js": "2.3.2",
         "zone.js": "0.10.2"

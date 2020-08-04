@@ -23,11 +23,17 @@ import { FilmesService } from './services/filmes.service';
 import { PesquisaComponent } from './main/pesquisa/pesquisa.component';
 import { HomeModule } from './main/home/home.module';
 import { PesquisaModule } from './main/pesquisa/pesquisa.module';
+import { FilmesAssistidosModule } from './main/filmes-assistidos/filmes-assistidos.module';
+import { FilmesQueroVerModule } from './main/filmes-quero-ver/filmes-quero-ver.module';
+import { FilmesAssistidosComponent } from './main/filmes-assistidos/filmes-assistidos.component';
+import { FilmesQueroVerComponent } from './main/filmes-quero-ver/filmes-quero-ver.component';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'pesquisa', component: PesquisaComponent}
+    { path: 'pesquisa', component: PesquisaComponent},
+    { path: 'filmes-assistidos', component: FilmesAssistidosComponent },
+    { path: 'filmes-quero-ver', component: FilmesQueroVerComponent},
 ];
 
 @NgModule({
@@ -37,6 +43,8 @@ const appRoutes: Routes = [
     imports: [
         HomeModule,
         PesquisaModule,
+        FilmesAssistidosModule,
+        FilmesQueroVerModule,
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,

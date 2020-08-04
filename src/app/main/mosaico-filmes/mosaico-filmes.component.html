@@ -3,24 +3,52 @@
     <div class="box div-capa" *ngFor="let filme of listaFilmes">
 
         <a target="_blank" href={{filme.linkfilme}}>
-            <img [src]="filme.capafilme">
+            <div style="position: relative;">
+                <img [src]="filme.capafilme">
+            </div>
+            <div style="width: 100%; height: 40px; position: relative; bottom: 40px;">
+                <div class="div-legenda">
+                    <div *ngIf="tipoListaFilmes === '0'" class="botao-texto-legenda cor-botao-texto-ja-vi">
+                        <label style="cursor: pointer;">assistido!</label>
+                    </div>
+                    <div *ngIf="tipoListaFilmes === '1'" class="botao-texto-legenda cor-botao-texto-quero-ver">
+                        <label style="cursor: pointer;">quero assistir!</label>
+                    </div>
+                </div>
+            </div>
         </a>
 
-        <a>
+        <div class="unselectable" style="position: relative; bottom: 40px;">
 
-            <div id="botoes" style="width: 100%; display: flex;">
-                <div style="width: 33%;">
-                    assisti
+            <div class="div-botoes">
+                <div class="botao-icone cor-botao-icone-nao-vi">
+                    <img style="width: 25px; height: 25px;" src="./../../../assets/icons/naovi.png">
                 </div>
-                <div style="width: 34%;">
-                    quero ver
-                </div>
-                <div style="width: 33%;">
-                    detalhes
+                <div class="botao-texto cor-botao-texto-nao-vi">
+                    <label *ngIf="tipoListaFilmes === '0'" style="cursor: pointer;">não assisti</label>
+                    <label *ngIf="tipoListaFilmes === '1'" style="cursor: pointer;">não quero assistir</label>
                 </div>
             </div>
 
-        </a>
+            <div *ngIf="tipoListaFilmes !== '0'" class="div-botoes">
+                <div class="botao-icone cor-botao-icone-ja-vi">
+                    <img style="width: 25px; height: 25px;" src="./../../../assets/icons/javi.png">
+                </div>
+                <div class="botao-texto cor-botao-texto-ja-vi">
+                    <label style="cursor: pointer;">já assisti</label>
+                </div>
+            </div>
+
+            <div *ngIf="tipoListaFilmes !== '1'" class="div-botoes">
+                <div class="botao-icone cor-botao-icone-quero-ver">
+                    <img style="width: 25px; height: 25px;" src="./../../../assets/icons/querover.png">
+                </div>
+                <div class="botao-texto cor-botao-texto-quero-ver">
+                    <label style="cursor: pointer;">quero assistir</label>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 

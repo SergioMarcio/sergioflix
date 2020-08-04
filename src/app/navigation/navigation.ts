@@ -20,6 +20,20 @@ export const navigation: FuseNavigation[] = [
                 icon: 'search',
                 url: '/pesquisa',
             },
+            {
+                id: 'filmes-assistidos',
+                title: 'Filmes Assistidos',
+                type: 'item',
+                icon: 'format_list_bulleted',
+                url: '/filmes-assistidos',
+            },
+            {
+                id: 'filmes-quero-ver',
+                title: 'Filmes que Quero Ver',
+                type: 'item',
+                icon: 'format_list_bulleted',
+                url: '/filmes-quero-ver',
+            },
         ]
     }
 ];

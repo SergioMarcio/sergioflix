@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MosaicoFilmesComponent } from './mosaico-filmes.component';
+import { MatButtonModule } from '@angular/material/button';
+import { RadioButtonModule } from 'smart-webcomponents-angular/radiobutton';
 
 @NgModule({
     
@@ -12,6 +14,7 @@ import { MosaicoFilmesComponent } from './mosaico-filmes.component';
   ],
 
   imports: [
+    MatButtonModule,
     CommonModule,
     BrowserModule,
     HttpClientModule,
